@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :playlists do
-    resources :podcasts
+    resources :podcasts do
+      resources :comments
+    end
   end
 
 

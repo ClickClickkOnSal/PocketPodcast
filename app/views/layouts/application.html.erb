@@ -5,14 +5,26 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 </head>
 <body>
   <h1>PodCloud</h1>
-  <%= link_to "Sign Up", new_user_registration_path %>
-  <%= link_to "Sign In", new_user_session_path %>
-  <%= link_to "Sign Out", destroy_user_session_path %>
+
+  <% if !user_signed_in? %>
+    <ul class="no-session">
+      <li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up" %></li>
+      <li id="or-text">Or</li>
+      <li><%= link_to "Sign In", new_user_session_path, id: "sign-in" %></li>
+    </ul>
+
+  <% elsif user_signed_in? %>
+    <ul class="yes-session">
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, id: "sign-out" %></li>
+    </ul>
+
+  <% end %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 <%= yield %>
 
 </body>

@@ -11,17 +11,36 @@ $(document).ready(function() {
       type: "GET",
       dataType: "jsonp",
       success: function(data) { 
-        var artist = data.results[0].artistName;
-        var collection = data.results[0].collectionName;
-        var collectionItunesUrl = data.results[0].collectionViewUrl;
+        var artistName = data.results[0].artistName;
+        var collectionName = data.results[0].collectionName;
+        var itunesUrl = data.results[0].collectionViewUrl;
         var imageUrl = data.results[0].artworkUrl600
         var rssUrl = data.results[0].feedUrl;
-        var genreTypes = data.results[0].genres;
-        $("#podcast").html(artist);
-        $("#podcast").append(collection);
-        $("#podcast").append(collectionItunesUrl);
-        $("#podcast").append(imageUrl);
-        $("#podcast").append(genreTypes);
+        var genreType = data.results[0].primaryGenreName;
+        
+        if(data.resultCount > 1) {
+          $("#podcast").html("<p>There are multiple results for your search query<br />Please Select podcast you wish to go to.</p>");
+          for(var i = 0; i < data.resultCount; i ++) {
+              var options = data.results[i].collectionName;
+            $("#option").append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a></li>");
+          };
+          $(".choices").on("click", function(event) {
+            event.preventDefault();
+
+            var selection = $(this).attr("id");
+            $("#podcast").html(data.results[selection].artistName);
+            $("#podcast").append(data.results[selection].collectionName);
+            $("#podcast").append(data.results[selection].collectionViewUrl);
+            $("#podcast").append(data.results[selection].artworkUrl600);
+            $("#podcast").append(data.results[selection].primaryGenreName);
+          })
+        } else {
+          $("#podcast").html(artistName);
+          $("#podcast").append(collectionName);
+          $("#podcast").append(itunesUrl);
+          $("#podcast").append(imageUrl);
+          $("#podcast").append(genreType);
+        }
       },
     });
   });

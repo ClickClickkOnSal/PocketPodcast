@@ -43,10 +43,12 @@ ActiveRecord::Schema.define(version: 20141027154705) do
   add_index "playlists_podcasts", ["podcast_id", "playlist_id"], name: "index_playlists_podcasts_on_podcast_id_and_playlist_id", using: :btree
 
   create_table "podcasts", force: true do |t|
-    t.string   "name"
-    t.string   "web_url"
-    t.string   "audio_url"
-    t.string   "category"
+    t.string   "artist_name"
+    t.string   "collection_name"
+    t.string   "itunes_url"
+    t.string   "image_url"
+    t.string   "rss_url"
+    t.string   "primary_genre"
     t.integer  "playlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"

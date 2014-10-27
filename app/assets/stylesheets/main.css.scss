@@ -1,9 +1,11 @@
+$primary-color: #0099CC;
+$secondary-color: orange;
 h1 {
   text-align: left;
   font-size: 2em;
   font-family: 'Pacifico', cursive;
   margin-top: -0.5em;
-  background: #0099CC;
+  background: $primary-color;
 }
 
 .no-session {
@@ -25,14 +27,14 @@ h1 {
 }
 
 #sign-up, #sign-out {
-  background: orange;
-  border: 0.4em solid orange;
+  background: $secondary-color;
+  border: 0.4em solid $secondary-color;
   border-radius: 0.5em;
   color: white;
 }
 
 #or-text {
-  font-size: 1.3em;
+  font-size: 1.5em;
   color: #2F4F4F;
 
 }
@@ -47,5 +49,13 @@ h1 {
   a {
     text-decoration: none;
     font-size: 1.6em;
+  }
+}
+
+.search-div {
+  text-align: center;
+  #search {
+    width: 40em;
+    margin-right: -0.43em;
   }
 }

@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#creates the app erd based upon the active record models
+gem "rails-erd"
 #authentication with devise
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

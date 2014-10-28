@@ -11,25 +11,32 @@ $(document).ready(function() {
       type: "GET",
       dataType: "jsonp",
       success: function(data) { 
-        $("#option").html("");
+
+        var optionSelection = $(".option")
+        var dataResult = data.results
+        var podCast = $(".podcast");
+
+        podCast.html("");
+        optionSelection.html("");
+
         for(var i = 0; i < data.resultCount; i ++) {
-              var options = data.results[i].collectionName;
-            $("#option").append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a></li>");
+              var options = dataResult[i].collectionName;
+              var photo = dataResult[i].artworkUrl600;
+            optionSelection.append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a><br /><img src='"+photo+"'></li>");
         };
 
         $(".choices").on("click", function(event) {
             event.preventDefault();
 
-            $("#option").html("");
-            var podCast = $("#podcast")
-            var dataResult = data.results
+            optionSelection.html("");
             var selection = $(this).attr("id");
 
-            podCast.html(dataResult[selection].artistName);
-            podCast.append(dataResult[selection].collectionName);
-            podCast.append(dataResult[selection].collectionViewUrl);
-            podCast.append(dataResult[selection].artworkUrl600);
-            podCast.append(dataResult[selection].primaryGenreName);
+            podCast.html("<li>Artist Name: "+dataResult[selection].artistName+"</li>");
+            podCast.append("<li>Podcast Name: "+dataResult[selection].collectionName+"</li>");
+            podCast.append("<li><a href='"+dataResult[selection].collectionViewUrl+"'>Click Here to view Podcast on the Itunes Website.</a></li>");
+            podCast.append("<li><img src='"+dataResult[selection].artworkUrl600+"'></li>");
+            podCast.append("<li>RSS Link: "+dataResult[selection].feedUrl+"</li>")
+            podCast.append("<li>Primary Genre: "+dataResult[selection].primaryGenreName+"</li>");
         });
       },
     });

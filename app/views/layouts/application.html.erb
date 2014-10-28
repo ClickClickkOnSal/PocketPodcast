@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>PodCloud</h1>
+  <h1><%= link_to "PodCloud", root_url %></h1>
 
   <% if !user_signed_in? %>
     <ul class="no-session">
@@ -33,6 +33,9 @@
 
   <ul class="option"></ul>
   <ul class="podcast"></ul>
+  <% if user_signed_in? %>
+    <ul class="button-add"><li><button class='add-to-playlist'>Add to Playlist</button></li></ul>
+  <% end %>
   
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

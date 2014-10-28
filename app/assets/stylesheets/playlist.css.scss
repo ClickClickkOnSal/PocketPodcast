@@ -15,3 +15,12 @@ $cabin-font: 'Cabin', sans-serif;
   font-family: $cabin-font;
   font-weight: bold;
 }
+
+.create-form, .submit-create, .button-add {
+  display: none;
+  text-align: center;
+}
+
+.button-add {
+  list-style-type: none;
+}

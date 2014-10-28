@@ -3,8 +3,10 @@ $(document).ready(function() {
   $("#playlist").on("click", function() {
     $(".option").html("");
     $(".podcast").html("");
-    $(".create-form").show();
-    $(".submit-create").show();
+    $(".create-form").toggle();
+    $(".submit-create").toggle();
+    $(".list-all-playlists").toggle();
+    $(".notice").html("");
   });
 
   $(".create-form").on("submit", function(event) {
@@ -19,10 +21,10 @@ $(document).ready(function() {
       dataType: 'json',
       data: { playlist: { name: newPlaylist } },
       success: function(data) {
-        url += "&" + data.id;
-        console.log(data.id);
+        $(".list-all-playlists").prepend("<li><a href='/playlists/"+data.id+"'>"+data.name+"</a></li>")
       }
     });
+
   });
   // for adding playlist when searching for podcasts
   // $(".add-to-playlist").on("click", function() {

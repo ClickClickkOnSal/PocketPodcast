@@ -1,7 +1,15 @@
 class PlaylistsController < ApplicationController
 
   def index
-    
+    @playlists = Playlist.where(user_id: current_user.id) if user_signed_in?
+    respond_to do |format|
+      format.html
+      format.json {render json: @playlists}
+    end
+  end
+
+  def show
+    @playlist = Playlist.find(params[:id])  
   end
 
   def create
@@ -15,6 +23,13 @@ class PlaylistsController < ApplicationController
         format.json { render status: 400, nothing: true }
       end
     end
+  end
+
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+
+    redirect_to playlists_url, notice: "Playlist succesfully deleted."
   end
 
   private

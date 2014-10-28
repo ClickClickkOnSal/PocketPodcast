@@ -1,3 +1,4 @@
+$primary-color: #0099CC;
 $cabin-font: 'Cabin', sans-serif;
 
 #playlist {
@@ -6,8 +7,8 @@ $cabin-font: 'Cabin', sans-serif;
   font-weight: bold;
   width: 5em;
   position: absolute;
-  left: 0;
-  top: 3.5em;
+  left: 0.25em;
+  top: 1.55em;
 }
 
 .add-to-playlist {
@@ -16,11 +17,47 @@ $cabin-font: 'Cabin', sans-serif;
   font-weight: bold;
 }
 
-.create-form, .submit-create, .button-add {
+.create-form, .submit-create {
+  position: absolute;
+  top: 4.5em;
+  left: 2;
   display: none;
-  text-align: center;
+  text-align: left;
+  font-size: 1em;
+  input[type='submit'] {
+    left: 11.3em;
+    top: 4.7em;
+  }
 }
 
 .button-add {
   list-style-type: none;
+  display: none;
+  text-align: center;
+  font-size: 1em;
+}
+
+.list-all-playlists {
+  position: absolute;
+  top: 9.5em;
+  left: 0.1em;
+  display: none;
+  text-align: left;
+  list-style-type: none;
+  a {
+    text-decoration: none;
+    font-size: 2em;
+    color: $primary-color;
+    font-weight: bold;
+    font-family: $cabin-font;
+  }
+}
+
+h4 {
+  text-align: right;
+  a {
+    text-decoration: none;
+    color: red;
+    font-family: $cabin-font;
+  }
 }

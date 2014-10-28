@@ -13,7 +13,7 @@ $(document).ready(function() {
       success: function(data) { 
 
         var optionSelection = $(".option")
-        var dataResult = data.results
+        var dataResult = data.results;
         var podCast = $(".podcast");
 
         podCast.html("");
@@ -35,8 +35,9 @@ $(document).ready(function() {
             podCast.append("<li>Podcast Name: "+dataResult[selection].collectionName+"</li>");
             podCast.append("<li><a href='"+dataResult[selection].collectionViewUrl+"'>Click Here to view Podcast on the Itunes Website.</a></li>");
             podCast.append("<li><img src='"+dataResult[selection].artworkUrl600+"'></li>");
-            podCast.append("<li>RSS Link: "+dataResult[selection].feedUrl+"</li>")
+            podCast.append("<li class='rss'>"+dataResult[selection].feedUrl+"</li>");
             podCast.append("<li>Primary Genre: "+dataResult[selection].primaryGenreName+"</li>");
+            podCast.append("<li><button class='add-to-playlist'>Add to Playlist</button></li>");
         });
       },
     });

@@ -1,0 +1,17 @@
+$cabin-font: 'Cabin', sans-serif;
+
+#playlist {
+  font-size: 2em;
+  font-family: $cabin-font;
+  font-weight: bold;
+  width: 5em;
+  position: absolute;
+  left: 0;
+  top: 3.5em;
+}
+
+.add-to-playlist {
+  font-size: 1em;
+  font-family: $cabin-font;
+  font-weight: bold;
+}

@@ -6,6 +6,7 @@ $(document).ready(function() {
     $(".add-to-playlist").hide();
     $("h4 a").hide();
     $(".notice").html("");
+    $(".container").html("");
 
     var keyWord = $("#search").val();
     $("#search").val("");
@@ -35,10 +36,10 @@ $(document).ready(function() {
                $(".button-add").show();
               var selection = $(this).attr("id");
 
-              podCast.html("<li>Artist Name: <span class='artist'>"+dataResult[selection].artistName+"</span></li>");
+              podCast.html("<li><img src='"+dataResult[selection].artworkUrl600+"' class='image-url'></li>");
+              podCast.append("<li>Artist Name: <span class='artist'>"+dataResult[selection].artistName+"</span></li>");
               podCast.append("<li>Podcast Name: <span class='collection'>"+dataResult[selection].collectionName+"</span></li>");
               podCast.append("<li><a href='"+dataResult[selection].collectionViewUrl+"' class='itunes-url'>Click Here to view Podcast on the Itunes Website.</a></li>");
-              podCast.append("<li><img src='"+dataResult[selection].artworkUrl600+"' class='image-url'></li>");
               podCast.append("<li class='rss-url'>"+dataResult[selection].feedUrl+"</li>");
               podCast.append("<li>Primary Genre: <span class='primary-genre'>"+dataResult[selection].primaryGenreName+"</span></li>");
               $(".add-to-playlist").show();

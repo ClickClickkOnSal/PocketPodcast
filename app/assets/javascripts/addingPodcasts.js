@@ -18,18 +18,17 @@ $(document).ready(function() {
     console.log(selectionId);
     var artistName = $(".artist").html();
     var collectionName = $(".collection").html();
-    var itunesUrl = $(".itunes-url").html();
+    var itunesUrl = $(".itunes-url").prop('href');
     var imageUrl = $(".image-url").prop('src');
     var rssUrl = $(".rss-url").html();
     var primaryGenre = $(".primary-genre").html();
-
     $.ajax ({ 
       url: "/playlists/" + selectionId + "/podcasts",
       method: "POST",
       dataType: "json",
       data: { podcast: { artist_name: artistName, collection_name: collectionName, itunes_url: itunesUrl, image_url: imageUrl, rss_url: rssUrl, primary_genre: primaryGenre } },
       success: function (data) {
-        console.log(data);
+        $(".button-add").html("Added to Playlist Succefully!");
       },
     });
   });

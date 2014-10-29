@@ -1,0 +1,22 @@
+.container {
+  width: 43%;
+  margin: auto;
+  clear: both;
+  margin-top: 2em;
+  position: relative;
+  .podcasts-list {
+    list-style-type: none;
+    text-align: left;
+    font-size: 1.1em;
+    float: right;
+    width: 80%;
+    position: absolute;
+    top: -0.8em;
+    left: 5em;
+  }
+}
+
+.image-list {
+  height: 20%;
+  width: 20%;
+}

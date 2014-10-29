@@ -9,7 +9,8 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.find(params[:id])  
+    @playlists = Playlist.where(user_id: current_user.id) if user_signed_in?
+    @playlist = Playlist.find(params[:id]) 
   end
 
   def create

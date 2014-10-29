@@ -1,7 +1,10 @@
 class PodcastsController < ApplicationController
   
   def index
-    
+    # @playlists = Playlist.where(user_id: current_user.id)
+    # @podcasts = @playlists.map do |p|
+    #   Podcast.where(playlist_id: playlist_id)
+    # end
   end
 
   def create

@@ -17,6 +17,28 @@ $primary-color: #0099CC;
 }
 
 img {
-  height: 5%;
-  width: 5%;
+  height: 10%;
+  width: 10%;
+}
+
+.search-pc-container {
+  width: 43%;
+  margin: auto;
+  clear: both;
+  margin-top: 2em;
+  position: relative;
+  .podcast {
+    text-align: left;
+    font-size: 1.1em;
+    position: absolute;
+    top: 10em;
+
+  }
+  .image-url {
+    position: absolute;
+    left: 8em;
+    top: -9em;
+    height: 80%;
+    width: 35%;
+  }
 }

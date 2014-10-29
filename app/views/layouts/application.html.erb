@@ -32,10 +32,13 @@
   </div>
 
   <ul class="option"></ul>
-  <ul class="podcast"></ul>
-  <% if user_signed_in? %>
-    <ul class="button-add"><li><button class='add-to-playlist'>Add to Playlist</button></li></ul>
-  <% end %>
+
+  <div class="search-pc-container">
+    <ul class="podcast"></ul>
+    <% if user_signed_in? %>
+      <ul class="button-add"><li><button class='add-to-playlist'>Add to Playlist</button></li></ul>
+    <% end %>
+  </div>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

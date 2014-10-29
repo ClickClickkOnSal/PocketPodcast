@@ -1,1 +1,18 @@
 <h4><%= link_to "Delete Playlist", @playlist, method: :delete %></h4>
+
+<%= render 'playlist' %>
+
+<% @playlist.podcasts.each do |x| %>
+  <div class="container">
+    <img src='<%= x.image_url %>' class="image-list">
+    <ul class="podcasts-list">
+      <li><h<%= x.artist_name %></li>
+      <li><%= x.collection_name %></li>
+      <li><a href='<%= x.itunes_url %>'>Click Here to view Podcast on the Itunes Website.</a></li>
+      <li><%= x.rss_url %></li>
+      <li><%= x.primary_genre %></li>
+    </ul>
+  </div>
+
+<% end %>
+

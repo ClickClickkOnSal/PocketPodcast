@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $("#playlist").on("click", function() {
-    $(".podcast").html("");
+    $(".podcasts-list").html("");
     $(".create-form").toggle();
     $(".submit-create").toggle();
     $(".list-all-playlists").toggle();

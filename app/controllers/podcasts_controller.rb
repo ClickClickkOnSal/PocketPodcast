@@ -1,10 +1,8 @@
 class PodcastsController < ApplicationController
   
-  def index
-    # @playlists = Playlist.where(user_id: current_user.id)
-    # @podcasts = @playlists.map do |p|
-    #   Podcast.where(playlist_id: playlist_id)
-    # end
+  def show
+    @playlists = Playlist.where(user_id: current_user.id) if user_signed_in?
+    @podcast = Podcast.find(params[:id])
   end
 
   def create
@@ -12,13 +10,21 @@ class PodcastsController < ApplicationController
     @playlist = Playlist.find(params[:playlist_id])
     respond_to do |format|
       if @podcast.save
-        format.html {redirect_to playlist_path(@playlist)}
+        format.html {redirect_to playlist_path(@playlist) }
         format.json { render json: @podcast }
       else
         format.html { render :new }
-        format.json { render status: 400, nothing: true}
+        format.json { render status: 400, nothing: true }
       end
     end
+  end
+
+  def destroy
+    @podcast = Podcast.find(params[:id])
+    @playlist = @podcast.playlist_id
+
+    redirect_to playlist_path(@playlist), notice: "Podcast successfully deleted."
+    @podcast.destroy
   end
 
   private

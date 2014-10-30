@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PocketPodCast</title>
+  <title>PodCloud</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
@@ -34,11 +34,16 @@
   <ul class="option"></ul>
 
   <div class="search-pc-container">
-    <ul class="podcast"></ul>
+    <ul class="podcasts-list"></ul>
     <% if user_signed_in? %>
       <ul class="button-add"><li><button class='add-to-playlist'>Add to Playlist</button></li></ul>
     <% end %>
   </div>
+
+  <!-- <audio controls>
+  <source src="http://traffic.libsyn.com/joeroganexp/p562.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio> -->
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

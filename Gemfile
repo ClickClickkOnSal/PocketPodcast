@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+#paginate my page! 
+gem 'will_paginate', '~> 3.0'
 #creates the app erd based upon the active record models
 gem "rails-erd"
 #authentication with devise

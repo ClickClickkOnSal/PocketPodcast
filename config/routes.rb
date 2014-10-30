@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :playlists do
-    resources :podcasts do
-      resources :comments
+  resources :playlists, only: [:index, :show, :create, :destroy] do
+    resources :podcasts, only: [:show, :create, :destroy] do
+      resources :comments, only: [:create, :destroy]
     end
   end
 

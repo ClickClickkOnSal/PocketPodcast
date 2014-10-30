@@ -26,7 +26,7 @@ $(document).ready(function() {
           for(var i = 0; i < data.resultCount; i ++) {
                 var options = dataResult[i].collectionName;
                 var photo = dataResult[i].artworkUrl600;
-              optionSelection.append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a><br /><img src='"+photo+"'></li>");
+              optionSelection.append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a><br /><img src='"+photo+"' class='image-list'></li>");
           };
 
           $(".choices").on("click", function(event) {
@@ -39,9 +39,9 @@ $(document).ready(function() {
               podCast.html("<li><img src='"+dataResult[selection].artworkUrl600+"' class='image-list'></li>");
               podCast.append("<li>Artist Name: <span>"+dataResult[selection].artistName+"</span></li>");
               podCast.append("<li>Podcast Name: <span>"+dataResult[selection].collectionName+"</span></li>");
-              podCast.append("<li><a href='"+dataResult[selection].collectionViewUrl+"' class='itunes-url'>Click Here to view Podcast on the Itunes Website.</a></li>");
               podCast.append("<li>"+dataResult[selection].feedUrl+"</li>");
               podCast.append("<li>Primary Genre: <span>"+dataResult[selection].primaryGenreName+"</span></li>");
+              podCast.append("<li><a href='"+dataResult[selection].collectionViewUrl+"' class='itunes-url'>Click Here to view Podcast on the Itunes Website.</a></li>");
               $(".add-to-playlist").show();
           });
         } else {

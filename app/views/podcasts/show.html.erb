@@ -3,7 +3,7 @@
 
 <div class="container">
   <ul class="podcasts-list">
-    <li><img src='<%= @podcast.image_url %>' class="image-list>"></li>
+    <li id="image-show-pc"><img src='<%= @podcast.image_url %>' class="image-list"></li>
     <li><%= @podcast.artist_name %></li>
     <li><%= @podcast.collection_name %></li>
     <li><a href='<%= @podcast.itunes_url %>'>Click Here to view Podcast on the Itunes Website.</a></li>
@@ -11,3 +11,8 @@
     <li><%= @podcast.primary_genre %></li>
   </ul>
 </div>
+
+<audio controls>
+  <source src="http://traffic.libsyn.com/joeroganexp/p562.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>

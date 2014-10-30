@@ -1,15 +1,39 @@
 $primary-color: #0099CC;
 $secondary-color: grey;
 $cabin-font: 'Cabin', sans-serif;
+
+body {
+  font-family: $cabin-font;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   text-align: left;
-  font-size: 2em;
+  padding: 0.2em;
+  font-size: 2.3em;
   font-family: 'Pacifico', cursive;
   margin-top: -0.5em;
   background: $primary-color;
   a {
-    text-decoration: none;
-  color: black;
+    color: black;
+    margin-left: 0.5em;
+  }
+}
+
+.no-session, .yes-session {
+  position: absolute;
+  right: 2em;
+  top: 0.2em;
+  li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 1.55em;
+  }
+  a {
+    color: white;
   }
 }
 
@@ -18,32 +42,18 @@ h1 {
   border: 0.4em solid $secondary-color;
   border-radius: 0.5em;
   color: white;
+  padding: 0.1em;
 }
 
 #or-text {
   font-size: 1.5em;
-  color: #2F4F4F;
-
-}
-
-.no-session, .yes-session {
-  position: absolute;
-  right: 0.5em;
-  top: -0.4em;
-  li {
-    list-style-type: none;
-    display: inline-block;
-    font-family: $cabin-font;
-    font-size: 1.55em;
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
+  color: black;
+  padding: 0 0.5em 0 0.5em;
 }
 
 .search-div {
   text-align: center;
+
   #search {
     font-size: 1.6em;
     width: 18em;
@@ -52,12 +62,12 @@ h1 {
     -webkit-appearance: none;
     font-size: 1em;
     transition: 1s;
-    font-family: $cabin-font;
+
     &:hover {
-    transition: 1s;
-    -webkit-transform: rotate(360deg); 
-    -moz-transform: rotate(360deg); 
-    -o-transform: rotate(360deg);
-  }
+      transition: 1s;
+      -webkit-transform: rotate(180deg); 
+      -moz-transform: rotate(180deg); 
+      -o-transform: rotate(180deg);
+    }
   }
 }

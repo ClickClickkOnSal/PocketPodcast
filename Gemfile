@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#be able to render css on heroku deploy
+gem 'rails_12factor'
 #creates the app erd based upon the active record models
 gem "rails-erd"
 #authentication with devise

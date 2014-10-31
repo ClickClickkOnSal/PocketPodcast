@@ -1,5 +1,6 @@
 class PodcastsController < ApplicationController
-  
+  before_action :authenticate_user!
+
   def show
     @playlists = Playlist.where(user_id: current_user.id) if user_signed_in?
     @podcast = Podcast.find(params[:id])

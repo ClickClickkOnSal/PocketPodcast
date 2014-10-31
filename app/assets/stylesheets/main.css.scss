@@ -1,5 +1,5 @@
 $primary-color: #0099CC;
-$secondary-color: grey;
+$secondary-color: #D1D2D0;
 $cabin-font: 'Cabin', sans-serif;
 
 body {
@@ -10,13 +10,17 @@ a {
   text-decoration: none;
 }
 
+header {
+  background: $primary-color;
+}
+
 h1 {
   text-align: left;
   padding: 0.2em;
   font-size: 2.3em;
   font-family: 'Pacifico', cursive;
-  margin-top: -0.5em;
-  background: $primary-color;
+  margin-top: 0em;
+  margin-bottom: 0em;
   a {
     color: black;
     margin-left: 0.5em;
@@ -26,14 +30,14 @@ h1 {
 .no-session, .yes-session {
   position: absolute;
   right: 2em;
-  top: 0.2em;
+  top: 1.05em;
   li {
     list-style-type: none;
     display: inline-block;
     font-size: 1.55em;
   }
   a {
-    color: white;
+    color: black;
   }
 }
 
@@ -41,8 +45,9 @@ h1 {
   background: $secondary-color;
   border: 0.4em solid $secondary-color;
   border-radius: 0.5em;
-  color: white;
+  color: green;
   padding: 0.1em;
+  margin-right: -0.4em;
 }
 
 #or-text {
@@ -52,7 +57,10 @@ h1 {
 }
 
 .search-div {
+  position: absolute;
   text-align: center;
+  top: 2.2em;
+  left: 27.5em;
 
   #search {
     font-size: 1.6em;
@@ -62,6 +70,8 @@ h1 {
     -webkit-appearance: none;
     font-size: 1em;
     transition: 1s;
+    background: green;
+    color: white;
 
     &:hover {
       transition: 1s;
@@ -70,4 +80,9 @@ h1 {
       -o-transform: rotate(180deg);
     }
   }
+}
+.option {
+  clear: both;
+  float: right;
+  margin: 0;
 }

@@ -1,22 +1,25 @@
-// $primary-color: #0099CC;
+$primary-color: #0099CC;
 
-// .option {
-//   font-size: 1.6em;
-//   text-align: center;
-//   background-color: #CFCDCD;
-//   li {
-//     list-style-type: none;
-//     margin-top: 1em;
-//     color: $primary-color;
-//     font-weight: bold;
-//     font-family: 'Cabin', sans-serif;
-//   }
-//   a {
-//     text-decoration: none;
-//     color: $primary-color;
-//   }
-// }
+.search-js {
+  display: none;
+  float: left;
+  width: 40%;
+  margin-top: 6.1em;
+  text-align: center;
+}
+.option {
+  list-style-type: none;
+  font-size: 1.5em;
+  background-color: #CFCDCD;
+  li {
+    margin-left: -1.68em;
+    margin-top: 1em;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
 
-// #image-show-pc {
-//   text-align: center;
-// }

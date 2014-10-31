@@ -2,7 +2,7 @@ class CreatePlaylists < ActiveRecord::Migration
   def change
     create_table :playlists do |t|
       t.string :name
-      t.string :user_references
+      t.references :user, index: true
 
       t.timestamps
     end

@@ -29,10 +29,12 @@ ActiveRecord::Schema.define(version: 20141027154705) do
 
   create_table "playlists", force: true do |t|
     t.string   "name"
-    t.string   "user_references"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
 
   create_table "playlists_podcasts", id: false, force: true do |t|
     t.integer "playlist_id", null: false

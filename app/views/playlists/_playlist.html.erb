@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <button class="home-buttons">Home</button>
+  <button class="home-buttons">Playlist</button>
+  
+  <form class="create-form">
+    <input placeholder="Create A Playlist" type="create-list" class="submit-create"></input>
+    <input type="submit" class="submit-create" value="Create"></input>
+  </form>
+
+  <ul class="list-all-playlists">
+    <% @playlists.each do |pods| %>
+       <li><%= link_to pods.name, playlist_path(pods) %></li>
+    <% end %>
+  </ul>
+<% end %>

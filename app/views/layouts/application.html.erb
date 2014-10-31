@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PocketPodCast</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>PodCloud</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>PodCloud</h1>
+  <h1><%= link_to "PodCloud", root_url %></h1> 
 
+  <!-- Sign in and Sign Out Buttons -->
   <% if !user_signed_in? %>
+    
     <ul class="no-session">
       <li><%= link_to "Sign In", new_user_session_path, id: "sign-in" %></li>
       <li id="or-text">Or</li>
@@ -17,20 +19,33 @@
     </ul>
 
   <% elsif user_signed_in? %>
+    
     <ul class="yes-session">
       <li><%= current_user.email %></li>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, id: "sign-out" %></li>
     </ul>
 
   <% end %>
+  <!-- end -->
 
+  <!-- Search Bar -->
   <div class="search-div">
     <form class="search-form">
-      <input placeholder="Search" type="search" id="search"></input>
+      <input placeholder="Search Podcast" type="search" id="search"></input>
       <input type="submit" id="submit-search" value="Submit"></input>
     </form>
   </div>
-  
+  <!-- end -->
+
+  <ul class="option"></ul>
+
+  <div class="search-pc-container">
+    <ul class="podcasts-list"></ul>
+    <% if user_signed_in? %>
+      <ul class="button-add"><li><button class='add-to-playlist'>Add to Playlist</button></li></ul>
+    <% end %>
+  </div>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <%= yield %>

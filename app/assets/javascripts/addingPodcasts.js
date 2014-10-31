@@ -19,7 +19,7 @@ $(document).ready(function() {
     var artistName = $(".artist").html();
     var collectionName = $(".collection").html();
     var itunesUrl = $(".itunes-url").prop('href');
-    var imageUrl = $(".image-url").prop('src');
+    var imageUrl = $(".image-list").prop('src');
     var rssUrl = $(".rss-url").html();
     var primaryGenre = $(".primary-genre").html();
     $.ajax ({ 

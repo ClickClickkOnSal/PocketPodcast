@@ -1,11 +1,9 @@
 $(document).ready(function() {
 
-  $("#playlist").on("click", function() {
-    $(".podcasts-list").html("");
-    $(".create-form").toggle();
-    $(".submit-create").toggle();
-    $(".list-all-playlists").toggle();
+  $(".search-pc-container").on("click", function() {
+    $(".podcast-show").html("");
     $(".notice").html("");
+    $(".search-pc-container").show();
   });
 
   $(".create-form").on("submit", function(event) {
@@ -25,7 +23,4 @@ $(document).ready(function() {
     });
 
   });
-  // for adding playlist when searching for podcasts
-  // $(".add-to-playlist").on("click", function() {
-  // });
 });

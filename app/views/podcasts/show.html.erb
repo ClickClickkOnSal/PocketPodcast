@@ -2,13 +2,13 @@
 <h4><%= link_to "Delete Podcast", playlist_podcast_path(@podcast.playlist_id, @podcast), method: :delete %></h4>
 
 <div class="container">
+  <img src='<%= @podcast.image_url %>' class="image-list">
   <ul class="podcasts-list">
-    <li id="image-show-pc"><img src='<%= @podcast.image_url %>' class="image-list"></li>
-    <li><%= @podcast.artist_name %></li>
-    <li><%= @podcast.collection_name %></li>
-    <li><a href='<%= @podcast.itunes_url %>'>Click Here to view Podcast on the Itunes Website.</a></li>
-    <li><%= @podcast.rss_url %></li>
-    <li><%= @podcast.primary_genre %></li>
+    <li>Artist Name: <%= @podcast.artist_name %></li>
+    <li>Podcast Name: <%= @podcast.collection_name %></li>
+    <li>Primary Genre: <%= @podcast.primary_genre %></li>
+    <li>Rss Url: <%= @podcast.rss_url %></li>
+    <li><button class="apple"><a href='<%= @podcast.itunes_url %>' target='_blank'>&#63743;</a></button></li>
   </ul>
 </div>
 

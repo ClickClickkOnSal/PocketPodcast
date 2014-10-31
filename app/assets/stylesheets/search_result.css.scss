@@ -1,0 +1,22 @@
+$primary-color: #0099CC;
+
+.option, .podcast {
+  font-size: 1.6em;
+  text-align: center;
+  li {
+    list-style-type: none;
+    margin-top: 1em;
+    color: $primary-color;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+
+img {
+  height: 5%;
+  width: 5%;
+}

@@ -11,36 +11,33 @@ $(document).ready(function() {
       type: "GET",
       dataType: "jsonp",
       success: function(data) { 
-        var artistName = data.results[0].artistName;
-        var collectionName = data.results[0].collectionName;
-        var itunesUrl = data.results[0].collectionViewUrl;
-        var imageUrl = data.results[0].artworkUrl600
-        var rssUrl = data.results[0].feedUrl;
-        var genreType = data.results[0].primaryGenreName;
-        
-        if(data.resultCount > 1) {
-          $("#podcast").html("<p>There are multiple results for your search query<br />Please Select podcast you wish to go to.</p>");
-          for(var i = 0; i < data.resultCount; i ++) {
-              var options = data.results[i].collectionName;
-            $("#option").append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a></li>");
-          };
-          $(".choices").on("click", function(event) {
+
+        var optionSelection = $(".option")
+        var dataResult = data.results
+        var podCast = $(".podcast");
+
+        podCast.html("");
+        optionSelection.html("");
+
+        for(var i = 0; i < data.resultCount; i ++) {
+              var options = dataResult[i].collectionName;
+              var photo = dataResult[i].artworkUrl600;
+            optionSelection.append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a><br /><img src='"+photo+"'></li>");
+        };
+
+        $(".choices").on("click", function(event) {
             event.preventDefault();
 
+            optionSelection.html("");
             var selection = $(this).attr("id");
-            $("#podcast").html(data.results[selection].artistName);
-            $("#podcast").append(data.results[selection].collectionName);
-            $("#podcast").append(data.results[selection].collectionViewUrl);
-            $("#podcast").append(data.results[selection].artworkUrl600);
-            $("#podcast").append(data.results[selection].primaryGenreName);
-          })
-        } else {
-          $("#podcast").html(artistName);
-          $("#podcast").append(collectionName);
-          $("#podcast").append(itunesUrl);
-          $("#podcast").append(imageUrl);
-          $("#podcast").append(genreType);
-        }
+
+            podCast.html("<li>Artist Name: "+dataResult[selection].artistName+"</li>");
+            podCast.append("<li>Podcast Name: "+dataResult[selection].collectionName+"</li>");
+            podCast.append("<li><a href='"+dataResult[selection].collectionViewUrl+"'>Click Here to view Podcast on the Itunes Website.</a></li>");
+            podCast.append("<li><img src='"+dataResult[selection].artworkUrl600+"'></li>");
+            podCast.append("<li>RSS Link: "+dataResult[selection].feedUrl+"</li>")
+            podCast.append("<li>Primary Genre: "+dataResult[selection].primaryGenreName+"</li>");
+        });
       },
     });
   });

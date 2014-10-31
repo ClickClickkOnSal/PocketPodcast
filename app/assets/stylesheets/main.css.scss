@@ -1,29 +1,12 @@
 $primary-color: #0099CC;
-$secondary-color: orange;
+$secondary-color: grey;
+$cabin-font: 'Cabin', sans-serif;
 h1 {
   text-align: left;
   font-size: 2em;
   font-family: 'Pacifico', cursive;
   margin-top: -0.5em;
   background: $primary-color;
-}
-
-.no-session {
-  position: absolute;
-  top: -0.4em;
-  right: 7em;
-  display: inline-block;
-  font-family: 'Cabin', sans-serif;
-  li {
-    float: right;
-    list-style-type: none;
-    padding-left: 1em;
-    a {
-      text-decoration: none;
-      font-size: 1.5em;
-      color: white
-    }
-  }
 }
 
 #sign-up, #sign-out {
@@ -39,23 +22,38 @@ h1 {
 
 }
 
-.yes-session {
+.no-session, .yes-session {
   position: absolute;
   right: 0.5em;
   top: -0.4em;
   li {
     list-style-type: none;
+    display: inline-block;
+    font-family: $cabin-font;
+    font-size: 1.55em;
   }
   a {
     text-decoration: none;
-    font-size: 1.6em;
+    color: white;
   }
 }
 
 .search-div {
   text-align: center;
   #search {
-    width: 40em;
-    margin-right: -0.43em;
+    font-size: 1.6em;
+    width: 18em;
+  }
+  #submit-search {
+    -webkit-appearance: none;
+    font-size: 1em;
+    transition: 1s;
+    font-family: $cabin-font;
+    &:hover {
+    transition: 1s;
+    -webkit-transform: rotate(360deg); 
+    -moz-transform: rotate(360deg); 
+    -o-transform: rotate(360deg);
+  }
   }
 }

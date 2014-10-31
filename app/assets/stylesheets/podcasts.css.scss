@@ -6,8 +6,6 @@ $primary-color: #0099CC;
   margin-top: 6.1em;
   position: relative;
   .podcasts-list {
-    clear: both;
-    float: left;
     list-style-type: none;
     text-align: left;
     font-size: 1.1em;
@@ -53,6 +51,7 @@ audio {
 }
 
 .search-pc-container {
+  max-width: 50%;
   display: none;
   float: left;
   background: #CFCDCD;

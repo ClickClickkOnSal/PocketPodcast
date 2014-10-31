@@ -23,7 +23,4 @@ $(document).ready(function() {
     });
 
   });
-  // for adding playlist when searching for podcasts
-  // $(".add-to-playlist").on("click", function() {
-  // });
 });

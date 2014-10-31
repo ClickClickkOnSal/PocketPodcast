@@ -2,17 +2,17 @@
 
 <%= render 'playlist' %>
 
+<% @playlist.podcasts.each do |podcast| %>
   <div class="container">
-    <% @playlist.podcasts.each do |podcast| %>
     <img src='<%= podcast.image_url %>' class="image-list">
-        <ul class="podcasts-list">
-          <li><%= podcast.artist_name %></li>
-          <li><%= podcast.collection_name %></li>
-          <li><%= podcast.primary_genre %></li>
-          <li><button class="view-pc"><%= link_to "View Podcast", playlist_podcast_path(@playlist, podcast) %></button></li>
-          <li><button class="apple real"><a href='<%=podcast.itunes_url %>'>&#63743</a></button></li>
-        </ul>
-
-    <% end %>
+    <ul class="podcasts-list">
+      <li><%= podcast.artist_name %></li>
+      <li><%= podcast.collection_name %></li>
+      <li><%= podcast.primary_genre %></li>
+      <li><button class="view-pc"><%= link_to "View Podcast", playlist_podcast_path(@playlist, podcast) %></button></li>
+      <li><button class="apple real"><a href='<%=podcast.itunes_url %>'>&#63743</a></button></li>
+    </ul>
   </div>
+
+<% end %>
 

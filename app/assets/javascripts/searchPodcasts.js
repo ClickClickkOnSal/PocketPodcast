@@ -16,7 +16,6 @@ $(document).ready(function() {
     $(".search-js").show();
     $(".independent-button").html("");
 
-
     var keyWord = $("#search").val();
     $("#search").val("");
 

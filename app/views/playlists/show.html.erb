@@ -10,7 +10,7 @@
         <li><%= podcast.collection_name %></li>
         <li><%= podcast.primary_genre %></li>
         <li><button class="view-pc"><%= link_to "View Podcast", playlist_podcast_path(@playlist, podcast) %></button></li>
-        <li><button class="apple real"><a href='<%=podcast.itunes_url %>'>&#63743</a></button></li>
+        <li><button class="apple real"><a href="<%= podcast.itunes_url %>" target='_blank'>&#63743</a></button></li>
       </ul>
     </div>
 

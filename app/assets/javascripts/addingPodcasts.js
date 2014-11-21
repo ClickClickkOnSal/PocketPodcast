@@ -18,7 +18,6 @@ $(document).ready(function() {
     var artistName = $(".artist").html();
     var collectionName = $(".collection").html();
     var itunesUrl = $(".itunes-url").prop('href');
-    console.log(itunesUrl);
     var imageUrl = $(".image-list").prop('src');
     var rssUrl = $(".rss-url").html();
     var primaryGenre = $(".primary-genre").html();

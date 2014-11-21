@@ -6,12 +6,14 @@ $(document).ready(function() {
     $(".add-to-playlist").hide();
     $("h4 a").hide();
     $(".notice").html("");
+    $(".container").html("");
     $(".container").hide();
     // show the list here because it will be hidden if a choice is clicked
     $(".search-pc-container").hide();
     $(".add-to-your-pl").hide();
     $(".search-js").show();
     $(".independent-button").html("");
+    $("audio").hide();
 
     var keyWord = $("#search").val();
     $("#search").val("");

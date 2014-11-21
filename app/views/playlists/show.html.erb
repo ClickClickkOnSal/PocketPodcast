@@ -1,18 +1,19 @@
 <h4><%= link_to "Delete Playlist", @playlist, method: :delete, :confirm=>'Are you sure?' %></h4>
 
 <%= render 'playlist' %>
+<div class="all-playlist">
+  <% @playlist.podcasts.each do |podcast| %>
+    <div class="container">
+      <img src='<%= podcast.image_url %>' class="image-list">
+      <ul class="podcasts-list">
+        <li><%= podcast.artist_name %></li>
+        <li><%= podcast.collection_name %></li>
+        <li><%= podcast.primary_genre %></li>
+        <li><button class="view-pc"><%= link_to "View Podcast", playlist_podcast_path(@playlist, podcast) %></button></li>
+        <li><button class="apple real"><a href='<%=podcast.itunes_url %>'>&#63743</a></button></li>
+      </ul>
+    </div>
 
-<% @playlist.podcasts.each do |podcast| %>
-  <div class="container">
-    <img src='<%= podcast.image_url %>' class="image-list">
-    <ul class="podcasts-list">
-      <li><%= podcast.artist_name %></li>
-      <li><%= podcast.collection_name %></li>
-      <li><%= podcast.primary_genre %></li>
-      <li><button class="view-pc"><%= link_to "View Podcast", playlist_podcast_path(@playlist, podcast) %></button></li>
-      <li><button class="apple real"><a href='<%=podcast.itunes_url %>'>&#63743</a></button></li>
-    </ul>
-  </div>
+  <% end %>
 
-<% end %>
-
+</div>

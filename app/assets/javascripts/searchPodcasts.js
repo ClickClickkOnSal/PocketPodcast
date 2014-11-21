@@ -4,17 +4,16 @@ $(document).ready(function() {
     event.preventDefault();
 
     $(".add-to-playlist").hide();
-    // hides delete play button
     $("h4 a").hide();
-    // hides notice message is commented out right now
     $(".notice").html("");
-    // commented out still
+    $(".container").html("");
     $(".container").hide();
     // show the list here because it will be hidden if a choice is clicked
     $(".search-pc-container").hide();
     $(".add-to-your-pl").hide();
     $(".search-js").show();
     $(".independent-button").html("");
+    $("audio").hide();
 
     var keyWord = $("#search").val();
     $("#search").val("");
@@ -50,7 +49,7 @@ $(document).ready(function() {
               podCast.html("<li><img src='"+dataResult[selection].artworkUrl600+"' class='image-list'></li>");
               podCast.append("<li>Artist Name: <span class='artist'>"+dataResult[selection].artistName+"</span></li>");
               podCast.append("<li>Podcast Name: <span class='collection'>"+dataResult[selection].collectionName+"</span></li>");
-              podCast.append("<li>Primary Genre: <span>"+dataResult[selection].primaryGenreName+"</span></li>");
+              podCast.append("<li>Primary Genre: <span class='primary-genre'>"+dataResult[selection].primaryGenreName+"</span></li>");
               $(".button-add").prepend("<li class='independent-button'><button><a href='"+dataResult[selection].collectionViewUrl+"' class='itunes-url' target='_blank'>&#63743</a></button></li>");
               podCast.append("<li class='rss-url'>"+dataResult[selection].feedUrl+"</li>");
               

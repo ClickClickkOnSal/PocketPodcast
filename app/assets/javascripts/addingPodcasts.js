@@ -5,9 +5,9 @@ $(document).ready(function() {
       method: "GET",
       dataType: "json",
       success: function(data) {
-        $(".button-add").html("<li>Select Which Playlist To Add To</li>")
+        $(".add-to-playlist").html("<li>Select Which Playlist To Add To</li>")
         for(var i = 0; i < data.length; i++) {
-          $(".button-add").append("<li><button class='to-playlist' id='"+data[i].id+"'>"+data[i].name+"</button></li>")
+          $(".add-to-playlist").append("<li><button class='to-playlist' id='"+data[i].id+"'>"+data[i].name+"</button></li>")
         }
       },
     });
@@ -15,7 +15,6 @@ $(document).ready(function() {
 
   $("body").on("click", ".to-playlist", function() {
     var selectionId = $(this).attr("id");
-    console.log(selectionId);
     var artistName = $(".artist").html();
     var collectionName = $(".collection").html();
     var itunesUrl = $(".itunes-url").prop('href');
@@ -28,7 +27,7 @@ $(document).ready(function() {
       dataType: "json",
       data: { podcast: { artist_name: artistName, collection_name: collectionName, itunes_url: itunesUrl, image_url: imageUrl, rss_url: rssUrl, primary_genre: primaryGenre } },
       success: function (data) {
-        $(".button-add").html("Added to Playlist Succefully!");
+        $(".add-to-playlist").html("Added to Playlist Succefully!");
       },
     });
   });

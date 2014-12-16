@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-  // $(".search-pc-container").on("click", function() {
-  //   $(".podcast-show").html("");
-  //   $(".notice").html("");
-  //   $(".search-pc-container").show();
-  // });
-
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
 

@@ -4,6 +4,7 @@ class PodcastsController < ApplicationController
   def show
     @playlists = Playlist.where(user_id: current_user.id) if user_signed_in?
     @podcast = Podcast.find(params[:id])
+    gon.rss_data_array = Podcast.parse_for_mpthree(@podcast.rss_url)
   end
 
   def create

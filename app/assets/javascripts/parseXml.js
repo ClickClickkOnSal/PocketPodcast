@@ -23,6 +23,14 @@ $(document).ready(function() {
               $(".audio-file").append("<div><h4>"+values[i].title+"</h4><br /><audio controls><source src='"+values[i].link+"' type='audio/mpeg'></audio></div>");
             }
           }
+          else {
+            if(i == 0){
+              $(".audio-file").html("<div><h4>"+gon.rss_data_array[1][i]+"</h4><br /><audio controls><source src='"+gon.rss_data_array[0][i]+"' type='audio/mpeg'></audio></div>");
+            }
+            else {
+              $(".audio-file").append("<div><h4>"+gon.rss_data_array[1][i]+"</h4><br /><audio controls><source src='"+gon.rss_data_array[0][i]+"' type='audio/mpeg'></audio></div>");
+            }
+          }
         }
       }
   	});

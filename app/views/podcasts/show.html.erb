@@ -7,11 +7,8 @@
     <li>Artist Name: <%= @podcast.artist_name %></li>
     <li>Podcast Name: <%= @podcast.collection_name %></li>
     <li>Primary Genre: <%= @podcast.primary_genre %></li>
-    <li id="rss-url">Rss Url: <%= @podcast.rss_url %></li>
+    <li id="rss-url"><%= @podcast.rss_url %></li>
     <li><button class="apple"><a href='<%= @podcast.itunes_url %>' target='_blank'>&#63743;</a></button></li>
   </ul>
 </div>
-
-<audio controls>
-  <source src="http://traffic.libsyn.com/joeroganexp/p562.mp3" type="audio/mpeg">
-</audio>
+<div class="audio-file"></div>

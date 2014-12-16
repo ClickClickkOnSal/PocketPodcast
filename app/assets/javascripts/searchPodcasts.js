@@ -14,6 +14,8 @@ $(document).ready(function() {
     $(".search-js").show();
     $(".independent-button").html("");
     $("audio").hide();
+    $(".audio-file").hide("");
+    $("h5").hide();
 
     var keyWord = $("#search").val();
     $("#search").val("");
@@ -31,7 +33,7 @@ $(document).ready(function() {
         podCast.html("");
         optionSelection.html("");
         if(data.results.length > 0) {
-          for(var i = 0; i < data.resultCount; i ++) {
+          for(var i = 0; i < 15; i ++) {
                 var options = dataResult[i].collectionName;
                 var photo = dataResult[i].artworkUrl600;
               optionSelection.append("<li><a href='#' id='"+i+"' class='choices'>"+options+"</a><br /><a href='#' class='choices' id='"+options+"'><img src='"+photo+"' class='image-list'></a></li>");

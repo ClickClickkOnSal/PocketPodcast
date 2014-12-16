@@ -15,6 +15,7 @@ h3 {
 .playlist-div {
   float: left;
   width: 30%;
+  height: 30em;
 }
 
 .create-form {
@@ -54,8 +55,10 @@ h3 {
 
 .add-to-your-pl {
   display: none;
-  clear: both;
+  float: left;
   text-align: center;
+  width: 45%;
+  max-width: 50%;
 
   .button-add {
     list-style-type: none;

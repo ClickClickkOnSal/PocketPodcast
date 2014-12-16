@@ -3,16 +3,24 @@ $primary-color: #0099CC;
 .container {
   background: #D1D2D0;
   float: left;
-  margin-top: 6.1em;
   position: relative;
+  margin-top: 5em;
+
+  &:after {
+  clear: both;
+  }
+
   .podcasts-list {
     list-style-type: none;
     text-align: left;
     font-size: 1.1em;
     position: absolute;
     color: $primary-color;
-    top: -0.8em;
+    top: 0;
     left: 5em;
+    margin: 0;
+    max-width: 100%;
+
     a {
       color: $primary-color;
       transition: 1s;

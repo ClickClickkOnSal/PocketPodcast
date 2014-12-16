@@ -1,1 +1,14 @@
 <%= render 'playlist' %>
+<h5>Podcasts Other Podcloud Users Listen To.</h5>
+<div class="podcast-div">
+	<% @podcasts.take(3).each do |podcast| %>
+		<div class="container">
+		  <img src='<%= podcast.image_url %>' class="image-list">
+		  <ul class="podcasts-list">
+		    <li>Artist Name: <%= podcast.artist_name %></li>
+		    <li>Podcast Name: <%= podcast.collection_name %></li>
+		    <li>Primary Genre: <%= podcast.primary_genre %></li>
+		  </ul>
+		</div>
+	<% end %>
+</div>

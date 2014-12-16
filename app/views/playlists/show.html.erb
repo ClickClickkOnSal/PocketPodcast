@@ -2,7 +2,7 @@
 
 <%= render 'playlist' %>
 <div class="all-playlist">
-  <% @playlist.podcasts.each do |podcast| %>
+  <% @playlist.podcasts.order("created_at").reverse.each do |podcast| %>
     <div class="container">
       <img src='<%= podcast.image_url %>' class="image-list">
       <ul class="podcasts-list">
@@ -13,7 +13,7 @@
         <li><button class="apple real"><a href="<%= podcast.itunes_url %>" target='_blank'>&#63743</a></button></li>
       </ul>
     </div>
-
+    
   <% end %>
 
 </div>

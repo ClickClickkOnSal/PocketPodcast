@@ -27,6 +27,7 @@ $(document).ready(function() {
       dataType: "json",
       data: { podcast: { artist_name: artistName, collection_name: collectionName, itunes_url: itunesUrl, image_url: imageUrl, rss_url: rssUrl, primary_genre: primaryGenre } },
       success: function (data) {
+        console.log(data);
         $(".add-to-playlist").html("Added to Playlist Succefully!");
       },
     });

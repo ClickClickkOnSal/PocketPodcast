@@ -2,6 +2,8 @@ class PlaylistsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    offset = rand(Podcast.count)
+    @podcasts = Podcast.offset(offset).all
     @playlists = Playlist.where(user_id: current_user.id) if user_signed_in?
     respond_to do |format|
       format.html

@@ -9,13 +9,15 @@ class Podcast < ActiveRecord::Base
 		doc = Nokogiri::XML(open("#{rss_feed}").read)
 
 		rss_array = []
+		rss_title_array = []
 
 		(0..10).each do |i|
 			rss_array << doc.xpath('/rss/channel/item/enclosure/@url')[i].value
+			rss_title_array << doc.xpath('/rss/channel/item/title')[i].children.text
 		end
 
-		return rss_array
-		
+		return [rss_array, rss_title_array]
+
   end
 
 end

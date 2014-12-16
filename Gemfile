@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'nokogiri'
 #be able to render css on heroku deploy
 gem 'rails_12factor'
 #creates the app erd based upon the active record models

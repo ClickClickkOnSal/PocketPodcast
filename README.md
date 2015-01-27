@@ -3,7 +3,7 @@
 ## Overview
 **PodCloud** is a web application to help users search for podcasts instead of using Itunes to do so. As a user signed up for the site they are able to create multiple playlists and add their selected podcasts to one of their created playlist. I built this app so it can help me listen to more podcasts because one could learn a lot from listening to many different podcasts. Podcasts are Awesome!!!
 
-[Link to PodCloud](https://shocking-cemetery-8361.herokuapp.com/)
+[Link to PodCloud](https://podcloud.herokuapp.com/)
 
 ## Local Set Up
 * <tt>$ git clone git@github.com:ClickClickkOnSal/PocketPodcast.git</tt>

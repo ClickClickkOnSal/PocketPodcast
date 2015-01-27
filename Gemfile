@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gem 'gon' #pass ruby code to javascript
 gem 'nokogiri'# parse through xml and scrape html
 gem 'rails_12factor' # be able to render css on heroku deploy
+gem "autoprefixer-rails"
 gem "rails-erd" #creates the app erd based upon the active record models
 gem 'devise' #authentication with devise
 gem 'rails', '4.1.5' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
